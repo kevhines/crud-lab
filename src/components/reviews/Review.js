@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 class Review extends Component {
 
   render() {
-    const { review } = this.props;
+    const { review, delReview } = this.props;
 
     return (
       <div>
         <li>
           {review.text}
+        <button onClick={() => delReview(review.id)}> X </button>
         </li>
-        <button> X </button>
       </div>
     );
   }

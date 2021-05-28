@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 import Review from './Review';
 
 class Reviews extends Component {
+
+  renderReviews = () => {
+    // debugger
+    return this.props.reviews.map(review => <Review key={review.id} delReview={this.props.delReview} review={review}/>)
+  }
+
+
   render() {
     return (
       <ul>
-        Reviews
+        {this.renderReviews()}
       </ul>
     );
   }
